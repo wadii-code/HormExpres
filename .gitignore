@@ -74,12 +74,6 @@ web_modules
 .env.production.local
 .env.local
 
-# Vite
-dist
-dist-ssr
-.idea
-.vscode
-
 # Duplicates
 * (2).*
 * (2)
