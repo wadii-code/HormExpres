@@ -69,12 +69,9 @@ const About = () => {
             <div className="relative">
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-lg">
-                <video
-                  src="/videos/vide-second-page2.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <img
+                  src= "./images/hero-bg.jpg"
+                  alt="About Hormexpres"
                   className="w-full h-[500px] object-cover"
                 />
                 {/* Overlay Badge */}
@@ -197,18 +194,18 @@ const About = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="bg-[#fbab39] p-6 rounded-lg text-white">
-                    <div className="text-4xl font-bold font-['Teko']">500+</div>
+                    <div className="text-4xl font-bold font-['Teko']">67+</div>
                     <div className="text-sm uppercase tracking-wider">Projets</div>
                   </div>
                   <img
-                    src="/images/service-1.jpg"
+                    src="./images/28.jpeg"
                     alt="Construction"
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="/images/service-2.jpg"
+                    src="./images/service-2.jpg"
                     alt="Engineering"
                     className="w-full h-48 object-cover rounded-lg"
                   />

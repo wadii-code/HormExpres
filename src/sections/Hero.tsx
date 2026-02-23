@@ -33,7 +33,7 @@ const Hero = () => {
       isLoaded ? 'scale-100' : 'scale-110'
     }`}
   >
-    <source src="public/videos/vid-home-page2.mp4" type="video/mp4" />
+    <source src="videos/vid-home-page2.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   {/* Dark Overlay */}
@@ -151,9 +151,9 @@ const Hero = () => {
             style={{ transitionDelay: '1.3s' }}
           >
             {[
-              { value: '25+', label: 'Années d\'expérience' },
-              { value: '500+', label: 'Projets réalisés' },
-              { value: '98%', label: 'Clients satisfaits' },
+              { value: '3+', label: 'Années d\'expérience' },
+              { value: '67+', label: 'Projets réalisés' },
+              { value: '100%', label: 'Clients satisfaits' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl md:text-4xl font-bold text-[#fbab39] font-['Teko']">

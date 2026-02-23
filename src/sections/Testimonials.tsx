@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
+
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +40,7 @@ const Testimonials = () => {
       name: 'Karim El Amrani',
       role: 'Propriétaire',
       company: 'Résidence Les Orangers',
-      image: '/images/client-avatar.jpg',
+      image: "./images/client-avatar.jpg",
       content: 'Excellente expérience avec Hormexpres pour la construction de notre résidence. Travail soigné, respect des délais et prix compétitifs. Une entreprise de confiance.',
       rating: 5,
     },
@@ -48,7 +49,7 @@ const Testimonials = () => {
       name: 'Wadii Rassy',
       role: 'Directeur de Projet',
       company: 'Projet X',
-      image: '/images/wadii.jpeg',
+      image: "./images/wadii.jpeg",
       content: 'Une collaboration exemplaire du début à la fin. Hormexpres a su comprendre nos besoins et proposer des solutions innovantes. Le résultat final est à la hauteur de nos espérances.',
       rating: 5,
     },
@@ -57,7 +58,7 @@ const Testimonials = () => {
       name: 'Bilal Alla',
       role: 'Architecte',
       company: 'Cabinet Alla',
-      image: '/images/rassy.jpeg',
+      image: "./images/rassy.jpeg",
       content: 'Hormexpres a dépassé toutes nos attentes. Notre projet a été livré dans les délais avec une qualité exceptionnelle. L\'équipe est professionnelle, réactive et très compétente.',
       rating: 5,
     },

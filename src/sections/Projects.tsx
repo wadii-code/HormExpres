@@ -44,7 +44,7 @@ const Projects = () => {
       category: 'construction',
       location: 'Casablanca',
       year: '2023',
-      image: '/images/project-1.jpg',
+      image: './images/1.jpeg',
       description: 'Construction d\'un pont à haubans de 500m de long.',
     },
     {
@@ -53,7 +53,7 @@ const Projects = () => {
       category: 'construction',
       location: 'Azilal',
       year: '2022',
-      image: '/images/project-2.jpg',
+      image: './images/2.jpeg',
       description: 'Construction d\'un barrage en béton de 120m de haut.',
     },
     {
@@ -62,7 +62,7 @@ const Projects = () => {
       category: 'charpente',
       location: 'Tanger',
       year: '2023',
-      image: '/images/project-3.jpg',
+      image: './images/3.jpeg',
       description: 'Conception et montage d\'une charpente métallique pour un hangar de 5000 m².',
     },
     {
@@ -71,7 +71,7 @@ const Projects = () => {
       category: 'charpente',
       location: 'Rabat',
       year: '2022',
-      image: '/images/project-4.jpg',
+      image: './images/4.jpeg',
       description: 'Réalisation d\'une passerelle piétonne métallique de 50m.',
     },
     {
@@ -80,7 +80,7 @@ const Projects = () => {
       category: 'resine',
       location: 'Agadir',
       year: '2023',
-      image: '/images/blog-1.jpg',
+      image: './images/5.jpeg',
       description: 'Application de résine époxy alimentaire sur 2000 m².',
     },
     {
@@ -89,7 +89,7 @@ const Projects = () => {
       category: 'resine',
       location: 'Marrakech',
       year: '2022',
-      image: '/images/blog-2.jpg',
+      image: './images/6.jpeg',
       description: 'Revêtement de sol en résine pour un parking de 300 places.',
     },
     {
@@ -98,7 +98,7 @@ const Projects = () => {
       category: 'revetement',
       location: 'Casablanca',
       year: '2023',
-      image: '/images/project-1.jpg',
+      image: './images/7.jpeg',
       description: 'Réalisation d\'un dallage industriel de 10 000 m² avec finition hélicoptère.',
     },
     {
@@ -107,7 +107,7 @@ const Projects = () => {
       category: 'revetement',
       location: 'Rabat',
       year: '2022',
-      image: '/images/project-2.jpg',
+      image: './images/8.jpeg',
       description: 'Coulage et lissage d\'un dallage de 5000 m² pour un centre commercial.',
     },
     {
@@ -116,7 +116,7 @@ const Projects = () => {
       category: 'peinture',
       location: 'Casablanca',
       year: '2023',
-      image: '/images/project-3.jpg',
+      image: './images/9.jpeg',
       description: 'Peinture extérieure et ravalement de façade d\'un immeuble de 10 étages.',
     },
     {
@@ -125,7 +125,7 @@ const Projects = () => {
       category: 'peinture',
       location: 'Marrakech',
       year: '2022',
-      image: '/images/project-4.jpg',
+      image: './images/10.jpeg',
       description: 'Peinture et finitions décoratives pour une villa de luxe.',
     },
     {
@@ -134,7 +134,7 @@ const Projects = () => {
       category: 'etancheite',
       location: 'Tanger',
       year: '2023',
-      image: '/images/blog-1.jpg',
+      image: './images/11.jpeg',
       description: 'Mise en place d\'un système d\'étanchéité multicouche sur 1000 m².',
     },
     {
@@ -143,7 +143,7 @@ const Projects = () => {
       category: 'etancheite',
       location: 'Agadir',
       year: '2022',
-      image: '/images/blog-2.jpg',
+      image: './images/12.jpeg',
       description: 'Application d\'un revêtement d\'imperméabilisation pour un bassin de 500 m³.',
     },
     {
@@ -152,7 +152,7 @@ const Projects = () => {
       category: 'sablage',
       location: 'Casablanca',
       year: '2023',
-      image: '/images/project-1.jpg',
+      image: './images/13.jpeg',
       description: 'Décapage par sablage de pièces métalliques avant peinture.',
     },
     {
@@ -161,7 +161,7 @@ const Projects = () => {
       category: 'sablage',
       location: 'Rabat',
       year: '2022',
-      image: '/images/project-2.jpg',
+      image: './images/14.jpeg',
       description: 'Sablage et nettoyage d\'une façade en pierre de taille.',
     },
   ];
@@ -330,9 +330,9 @@ const Projects = () => {
           style={{ transitionDelay: '1000ms' }}
         >
           {[
-            { value: '500+', label: 'Projets réalisés' },
+            { value: '67+', label: 'Projets réalisés' },
             { value: '50+', label: 'Clients fidèles' },
-            { value: '25+', label: 'Années d\'expérience' },
+            { value: '3+', label: 'Années d\'expérience' },
             { value: '100%', label: 'Engagement qualité' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">

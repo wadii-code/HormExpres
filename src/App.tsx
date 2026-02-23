@@ -10,6 +10,7 @@ import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import './App.css';
 
+
 function App() {
   const [scrollY, setScrollY] = useState(0);
   const mainRef = useRef<HTMLDivElement>(null);

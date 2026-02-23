@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Building2, Hammer, Factory, Paintbrush, Droplets, Layers, Trash2, Wrench, Zap, Sparkles } from 'lucide-react';
+import { Building2, Hammer, Factory, Paintbrush, Droplets, Layers, Trash2, Wrench, Zap, Sparkles, ArrowRight } from 'lucide-react';
+
 
 const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,61 +29,61 @@ const Services = () => {
       icon: Building2,
       title: 'Construction de bâtiment',
       description: 'Construction de bâtiments résidentiels, commerciaux et industriels avec les plus hauts standards de qualité.',
-      image: '/images/service-1.jpg',
+      image: './images/15.jpeg',
     },
     {
       icon: Hammer,
       title: 'Génie civil',
       description: 'Travaux de génie civil incluant fondations, structures, routes et infrastructures.',
-      image: '/images/service-2.jpg',
+      image: './images/16.jpeg',
     },
     {
       icon: Factory,
       title: 'Charpente métallique',
       description: 'Conception et installation de charpentes métalliques pour tous types de constructions.',
-      image: '/images/service-3.jpg',
+      image: './images/17.jpeg',
     },
     {
       icon: Paintbrush,
       title: 'Résine époxy',
       description: 'Revêtements en résine époxy alimentaire, antiacide et antidérapante pour sols industriels.',
-      image: '/images/service-4.jpg',
+      image: './images/18.jpeg',
     },
     {
       icon: Droplets,
       title: 'Étanchéité',
       description: 'Solutions d\'imperméabilisation et d\'étanchéité pour toitures et structures.',
-      image: '/images/service-5.jpg',
+      image: './images/19.jpeg',
     },
     {
       icon: Layers,
       title: 'Revêtement industriel',
       description: 'Dallage industriel, béton imprimé et revêtements de sols professionnels.',
-      image: '/images/project-1.jpg',
+      image: './images/20.jpeg',
     },
     {
       icon: Trash2,
       title: 'Démolition',
       description: 'Services de démolition contrôlée avec respect des normes environnementales.',
-      image: '/images/project-2.jpg',
+      image: './images/21.jpeg',
     },
     {
       icon: Wrench,
       title: 'Assainissement',
       description: 'Travaux d\'assainissement, plomberie et réseaux pour tous types de bâtiments.',
-      image: '/images/project-3.jpg',
+      image: './images/22.jpeg',
     },
     {
       icon: Zap,
       title: 'Électricité',
       description: 'Installation électrique complète pour constructions neuves et rénovations.',
-      image: '/images/project-4.jpg',
+      image: './images/23.jpeg',
     },
     {
       icon: Sparkles,
       title: 'Nettoyage industriel',
       description: 'Services de nettoyage industriel et désinfection professionnelle.',
-      image: '/images/blog-1.jpg',
+      image: './images/24.jpeg',
     },
   ];
 

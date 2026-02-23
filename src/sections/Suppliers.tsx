@@ -23,19 +23,20 @@ const Suppliers = () => {
   }, []);
 
   const suppliers = [
-    { name: 'BEG INGENIERIE', logo: '/images/BEG.png' },
-    { name: 'SIANA', logo: '/images/SIANA.png' },
-    { name: 'Royal Mirage', logo: '/images/royalMirage.png' },
-    { name: 'Hivernage Hotel & Spa', logo: '/images/HA.png' },
-    { name: 'Groupe Ebertec', logo: '/images/groupe.png' },
-    { name: 'Jibal', logo: '/images/jibal.png' },
-    { name: 'Delattre Levivier Maroc', logo: '/images/dlm.png' },
-    { name: 'Air Liquide', logo: '/images/airLiquide.png' },
-    { name: 'Les Celliers de Meknès', logo: '/images/meknes.png' },
-    { name: 'Danone', logo: '/images/danone.png' },
-    { name: 'Groupe Addoha', logo: '/images/adoha.png' },
-    { name: 'SOREC', logo: '/images/soreg.png' },
-    { name: 'ONCF', logo: '/images/oncf.png' },
+    { name: 'BEG INGENIERIE', logo: './images/BEG.png' },
+    { name: 'SIANA', logo: './images/SIANA.png' },
+    { name: 'Royal Mirage', logo: './images/royalMirage.png' },
+    { name: 'Hivernage Hotel & Spa', logo: './images/HA.png' },
+    { name: 'Groupe Ebertec', logo: './images/groupe.png' },
+    { name: 'Jibal', logo: './images/jibal.png' },
+    { name: 'Delattre Levivier Maroc', logo: './images/dlm.png' },
+    { name: 'Air Liquide', logo: './images/airLiquide.png' },
+    { name: 'Les Celliers de Meknès', logo: './images/meknes.png' },
+    { name: 'Danone', logo: './images/danone.png' },
+    { name: 'Groupe Addoha', logo: './images/adoha.png' },
+    { name: 'SOREC', logo: './images/soreg.png' },
+    { name: 'ONCF', logo: './images/oncf.png' },
+    { name: 'Shahin', logo: './images/shahin.png' },
   ];
 
   return (
