@@ -51,7 +51,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <img src="public/images/LogoHormExpress.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
+              <img src="./images/logohh.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
             </a>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Votre partenaire de confiance pour tous vos projets de construction et génie civil. 

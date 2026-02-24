@@ -84,7 +84,7 @@ const Header = ({ scrollY }: HeaderProps) => {
             }}
             className="flex items-center gap-3"
           >
-            <img src="public/images/AdobeExpress-file.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
+            <img src="./images/AdobeExpress-file.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
           </a>
 
           {/* Desktop Navigation */}
