@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 
 interface Service {
@@ -6,6 +6,7 @@ interface Service {
   title: string;
   description: string;
   image: string;
+  gallery?: { src: string; description: string }[];
 }
 
 interface ServiceModalProps {
@@ -15,6 +16,8 @@ interface ServiceModalProps {
 }
 
 const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; description: string } | null>(null);
+
   if (!isOpen || !service) return null;
 
   const handleContentClick = (e: React.MouseEvent) => {
@@ -36,7 +39,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-lg max-w-2xl w-full overflow-hidden relative"
+        className="bg-white rounded-lg max-w-4xl w-full overflow-hidden relative"
         onClick={handleContentClick}
       >
         <button 
@@ -59,7 +62,26 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           </div>
         </div>
         <div className="p-8">
-          <p className="text-gray-700 leading-relaxed text-base">{service.description}</p>
+          <p className="text-gray-700 leading-relaxed text-base mb-6">{service.description}</p>
+          
+          {/* Gallery Section */}
+          {service.gallery && service.gallery.length > 0 && (
+            <div className="mt-6">
+              <h3 className="text-xl font-bold text-[#212529] mb-4 font-['Teko']">Galerie photos</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {service.gallery.map((img, index) => (
+                  <div key={index} className="relative h-32 rounded-lg overflow-hidden cursor-pointer" onClick={() => setSelectedImage(img)}>
+                    <img 
+                      src={img.src} 
+                      alt={`${service.title} - Image ${index + 1}`} 
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
           <a 
             href="#contact" 
             onClick={handleContactClick}
@@ -70,6 +92,29 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           </a>
         </div>
       </div>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-[110] p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative text-center">
+            <img
+              src={selectedImage.src}
+              alt="Enlarged view"
+              className="max-w-[90vw] max-h-[80vh] rounded-lg shadow-2xl inline-block"
+            />
+            <p className="text-white mt-4 text-lg">{selectedImage.description}</p>
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-2 -right-2 bg-white rounded-full p-1 text-gray-800 hover:bg-gray-200 transition-colors"
+              aria-label="Close enlarged view"
+            >
+              <X size={28} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

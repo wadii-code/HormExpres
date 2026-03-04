@@ -69,9 +69,11 @@ const About = () => {
             <div className="relative">
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src= "./images/hero-bg.jpg"
-                  alt="About Hormexpres"
+                <video
+                  src="./videos/vid2.mp4"
+                  autoPlay
+                  loop
+                  muted
                   className="w-full h-[500px] object-cover"
                 />
                 {/* Overlay Badge */}
@@ -198,14 +200,14 @@ const About = () => {
                     <div className="text-sm uppercase tracking-wider">Projets</div>
                   </div>
                   <img
-                    src="./images/28.jpeg"
+                    src="./images/civil1.jpg"
                     alt="Construction"
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="./images/service-2.jpg"
+                    src="./images/24.jpeg"
                     alt="Engineering"
                     className="w-full h-48 object-cover rounded-lg"
                   />

@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter, Instagram, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -29,12 +29,7 @@ const Footer = () => {
     'Revêtement industriel',
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-  ];
+
 
   return (
     <footer className="bg-[#212529] text-white relative">
@@ -57,19 +52,7 @@ const Footer = () => {
               Votre partenaire de confiance pour tous vos projets de construction et génie civil. 
               Qualité, rapidité et prix compétitifs depuis plus de 25 ans.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#fbab39] transition-colors"
-                >
-                  <social.icon size={18} />
-                </a>
-              ))}
-            </div>
+           
           </div>
 
           {/* Quick Links */}

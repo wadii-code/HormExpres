@@ -72,8 +72,8 @@ const Hero = () => {
             }`}
             style={{ transitionDelay: '0.5s' }}
           >
-            <span className="block">WE BUILD</span>
-            <span className="block text-[#fbab39]">YOUR FUTURE</span>
+            <span className="block">NOUS CONSTRUISONS</span>
+            <span className="block text-[#fbab39]">VOTRE AVENIR</span>
           </h1>
 
           {/* Slogan */}

@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, MapPin, Calendar } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Expand } from 'lucide-react';
+import ProjectModal from '../components/ui/ProjectModal';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,6 +38,10 @@ const Projects = () => {
     { id: 'sablage', label: 'Sablage' },
   ];
 
+  const getImagePath = (baseName: string, id: number) => {
+    return `./images/${baseName}?v=${id}`;
+  };
+
   const projects = [
     {
       id: 1,
@@ -43,8 +49,8 @@ const Projects = () => {
       category: 'construction',
       location: 'Casablanca',
       year: '2023',
-      image: './images/1.jpeg',
-      gallery: ['./images/32.jpeg', './images/33.jpeg', './images/34.jpeg'],
+      image: getImagePath('civil.jpg', 1),
+      gallery: ['./images/civil2.jpg', './images/civil3.jpg', './images/civil4.jpg'],
       description: 'Construction d\'un pont à haubans de 500m de long.',
     },
     {
@@ -53,8 +59,8 @@ const Projects = () => {
       category: 'construction',
       location: 'Azilal',
       year: '2022',
-      image: './images/2.jpeg',
-      gallery: ['./images/35.jpeg', './images/36.jpeg', './images/37.jpeg'],
+      image: getImagePath('civil1.jpg', 2),
+      gallery: ['./images/civil5.jpg', './images/civil6.jpg', './images/civil7.jpeg'],
       description: 'Construction d\'un barrage en béton de 120m de haut.',
     },
     {
@@ -63,8 +69,8 @@ const Projects = () => {
       category: 'charpente',
       location: 'Tanger',
       year: '2023',
-      image: './images/3.jpeg',
-      gallery: ['./images/38.jpeg', './images/39.jpeg', './images/40.jpeg'],
+      image: getImagePath('Charpente.jpeg', 3),
+      gallery: ['./images/Charpente2.jpeg', './images/Charpente3.jpg', './images/Charpente4.jpg'],
       description: 'Conception et montage d\'une charpente métallique pour un hangar de 5000 m².',
     },
     {
@@ -73,8 +79,8 @@ const Projects = () => {
       category: 'charpente',
       location: 'Rabat',
       year: '2022',
-      image: './images/4.jpeg',
-      gallery: ['./images/41.jpeg', './images/42.jpeg', './images/43.jpeg'],
+      image: getImagePath('Charpente1.jpeg', 4),
+      gallery: ['./images/Charpente3.jpg', './images/Charpente4.jpg', './images/Charpente5.jpg'],
       description: 'Réalisation d\'une passerelle piétonne métallique de 50m.',
     },
     {
@@ -83,7 +89,7 @@ const Projects = () => {
       category: 'resine',
       location: 'Agadir',
       year: '2023',
-      image: './images/5.jpeg',
+      image: getImagePath('epoxy.jpeg', 5),
       description: 'Application de résine époxy alimentaire sur 2000 m².',
     },
     {
@@ -92,7 +98,7 @@ const Projects = () => {
       category: 'resine',
       location: 'Marrakech',
       year: '2022',
-      image: './images/6.jpeg',
+      image: getImagePath('epoxy1.jpeg', 6),
       description: 'Revêtement de sol en résine pour un parking de 300 places.',
     },
     {
@@ -101,8 +107,8 @@ const Projects = () => {
       category: 'revetement',
       location: 'Casablanca',
       year: '2023',
-      image: './images/7.jpeg',
-      description: 'Réalisation d\'un dallage industriel de 10 000 m² avec finition hélicoptère.',
+      image: getImagePath('Dallage.jpeg', 7),
+      description: 'Réalisation d\'un dallage industriel de 10 000 m² avec finale héropolitaine.',
     },
     {
       id: 8,
@@ -110,7 +116,7 @@ const Projects = () => {
       category: 'revetement',
       location: 'Rabat',
       year: '2022',
-      image: './images/8.jpeg',
+      image: getImagePath('Dallage1.jpeg', 8),
       description: 'Coulage et lissage d\'un dallage de 5000 m² pour un centre commercial.',
     },
     {
@@ -119,7 +125,7 @@ const Projects = () => {
       category: 'peinture',
       location: 'Casablanca',
       year: '2023',
-      image: './images/9.jpeg',
+      image: getImagePath('Peinture.jpeg', 9),
       description: 'Peinture extérieure et ravalement de façade d\'un immeuble de 10 étages.',
     },
     {
@@ -128,8 +134,8 @@ const Projects = () => {
       category: 'peinture',
       location: 'Marrakech',
       year: '2022',
-      image: './images/10.jpeg',
-      description: 'Peinture et finitions décoratives pour une villa de luxe.',
+      image: getImagePath('Peinture1.jpeg', 10),
+      description: 'Peinture et finales décoratives pour une villa de luxe.',
     },
     {
       id: 11,
@@ -137,7 +143,7 @@ const Projects = () => {
       category: 'etancheite',
       location: 'Tanger',
       year: '2023',
-      image: './images/11.jpeg',
+      image: getImagePath('Étanchéité.jpeg', 11),
       description: 'Mise en place d\'un système d\'étanchéité multicouche sur 1000 m².',
     },
     {
@@ -146,7 +152,7 @@ const Projects = () => {
       category: 'etancheite',
       location: 'Agadir',
       year: '2022',
-      image: './images/12.jpeg',
+      image: getImagePath('Étanchéité1.jpg', 12),
       description: 'Application d\'un revêtement d\'imperméabilisation pour un bassin de 500 m³.',
     },
     {
@@ -155,7 +161,7 @@ const Projects = () => {
       category: 'sablage',
       location: 'Casablanca',
       year: '2023',
-      image: './images/13.jpeg',
+      image: getImagePath('Sablage.jpeg', 13),
       description: 'Décapage par sablage de pièces métalliques avant peinture.',
     },
     {
@@ -164,7 +170,7 @@ const Projects = () => {
       category: 'sablage',
       location: 'Rabat',
       year: '2022',
-      image: './images/14.jpeg',
+      image: getImagePath('Sablage1.jpeg', 14),
       description: 'Sablage et nettoyage d\'une façade en pierre de taille.',
     },
   ];
@@ -230,7 +236,15 @@ const Projects = () => {
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#212529] via-[#212529]/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                
+
+                {/* Expand Icon */}
+                <div
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 cursor-pointer"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  <Expand size={18} className="text-white" />
+                </div>
+
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   {/* Category Badge */}
@@ -279,6 +293,13 @@ const Projects = () => {
             </button>
           </div>
         )}
+
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+          projectName={selectedProject?.title || ''}
+          images={selectedProject?.gallery || []}
+        />
 
         {/* Stats Bar */}
         <div

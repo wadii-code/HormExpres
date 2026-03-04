@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Building2, Hammer, Factory, Paintbrush, Droplets, Layers, Trash2, Wrench, Zap, Sparkles, ArrowRight } from 'lucide-react';
+import { Building2, Hammer, Factory, Paintbrush, Droplets, Layers, Sparkles, ArrowRight } from 'lucide-react';
 import ServiceModal from '../components/ui/ServiceModal';
 
 type Service = {
@@ -7,6 +7,7 @@ type Service = {
   title: string;
   description: string;
   image: string;
+  gallery?: { src: string; description: string }[];
 };
 
 const Services = () => {
@@ -35,63 +36,90 @@ const Services = () => {
   const services: Service[] = [
     {
       icon: Building2,
-      title: 'Construction de bâtiment',
-      description: 'Construction de bâtiments résidentiels, commerciaux et industriels avec les plus hauts standards de qualité.',
-      image: './images/15.jpeg',
+      title: 'Construction génie civil',
+      description: 'Travaux de construction et de génie civil incluant fondations, structures, routes et infrastructures.',
+      image: './images/civil.jpg',
+      gallery: [
+        { src: './images/civil.jpg', description: 'Description for civil 1' },
+        { src: './images/civil1.jpg', description: 'Description for civil 2' },
+        { src: './images/civil2.jpg', description: 'Description for civil 3' },
+        { src: './images/civil3.jpg', description: 'Description for civil 4' },
+        { src: './images/civil4.jpg', description: 'Description for civil 5' },
+        { src: './images/civil5.jpg', description: 'Description for civil 6' },
+      ],
     },
     {
       icon: Hammer,
-      title: 'Génie civil',
-      description: 'Travaux de génie civil incluant fondations, structures, routes et infrastructures.',
-      image: './images/16.jpeg',
+      title: 'Charpente métallique',
+      description: 'Conception et installation de charpentes métalliques pour tous types de constructions.',
+      image: './images/Charpente.jpeg',
+      gallery: [
+        { src: './images/Charpente.jpeg', description: 'Description for Charpente 1' },
+        { src: './images/Charpente1.jpeg', description: 'Description for Charpente 2' },
+        { src: './images/Charpente2.jpeg', description: 'Description for Charpente 3' },
+        { src: './images/Charpente3.jpg', description: 'Description for Charpente 4' },
+        { src: './images/Charpente4.jpg', description: 'Description for Charpente 5' },
+        { src: './images/Charpente5.jpg', description: 'Description for Charpente 6' },
+      ],
     },
     {
       icon: Factory,
-      title: 'Charpente métallique',
-      description: 'Conception et installation de charpentes métalliques pour tous types de constructions.',
-      image: './images/17.jpeg',
+      title: 'Résine époxy',
+      description: 'Revêtements en résine époxy alimentaire, antiacide et antidérapante pour sols industriels.',
+      image: './images/epoxy.jpeg',
+      gallery: [
+        { src: './images/epoxy.jpeg', description: 'Description for epoxy 1' },
+        { src: './images/epoxy1.jpeg', description: 'Description for epoxy 2' },
+        { src: './images/epoxy2.jpg', description: 'Description for epoxy 3' },
+        { src: './images/epoxy3.jpg', description: 'Description for epoxy 4' },
+      ],
     },
     {
       icon: Paintbrush,
-      title: 'Résine époxy',
-      description: 'Revêtements en résine époxy alimentaire, antiacide et antidérapante pour sols industriels.',
-      image: './images/18.jpeg',
+      title: 'Peinture murale',
+      description: 'Services de peinture extérieure et intérieure, ravalement de façade et finitions décoratives.',
+      image: './images/Peinture.jpeg',
+      gallery: [
+        { src: './images/Peinture.jpeg', description: 'Description for Peinture 1' },
+        { src: './images/Peinture1.jpeg', description: 'Description for Peinture 2' },
+        { src: './images/Peinture2.jpeg', description: 'Description for Peinture 3' },
+        { src: './images/Peinture3.jpeg', description: 'Description for Peinture 4' },
+      ],
     },
     {
       icon: Droplets,
       title: 'Étanchéité',
-      description: 'Solutions d\'imperméabilisation et d\'étanchéité pour toitures et structures.',
-      image: './images/19.jpeg',
+      description: 'Solutions d\'imperméabilisation et d\'étanchéité pour toitures, terrasses et bassins.',
+      image: './images/Étanchéité.jpeg',
+      gallery: [
+        { src: './images/Étanchéité.jpeg', description: 'Description for Étanchéité 1' },
+        { src: './images/Étanchéité1.jpg', description: 'Description for Étanchéité 2' },
+      ],
     },
     {
       icon: Layers,
-      title: 'Revêtement industriel',
+      title: 'Revêtement de dallage industriel',
       description: 'Dallage industriel, béton imprimé et revêtements de sols professionnels.',
-      image: './images/20.jpeg',
-    },
-    {
-      icon: Trash2,
-      title: 'Démolition',
-      description: 'Services de démolition contrôlée avec respect des normes environnementales.',
-      image: './images/21.jpeg',
-    },
-    {
-      icon: Wrench,
-      title: 'Assainissement',
-      description: 'Travaux d\'assainissement, plomberie et réseaux pour tous types de bâtiments.',
-      image: './images/22.jpeg',
-    },
-    {
-      icon: Zap,
-      title: 'Électricité',
-      description: 'Installation électrique complète pour constructions neuves et rénovations.',
-      image: './images/23.jpeg',
+      image: './images/Dallage.jpeg',
+      gallery: [
+        { src: './images/Dallage.jpeg', description: 'Description for Dallage 1' },
+        { src: './images/Dallage1.jpeg', description: 'Description for Dallage 2' },
+        { src: './images/Dallage3.jpg', description: 'Description for Dallage 3' },
+        { src: './images/Dallage4.jpg', description: 'Description for Dallage 4' },
+        { src: './images/Dallage5.jpg', description: 'Description for Dallage 5' },
+      ],
     },
     {
       icon: Sparkles,
-      title: 'Nettoyage industriel',
-      description: 'Services de nettoyage industriel et désinfection professionnelle.',
-      image: './images/24.jpeg',
+      title: 'Sablage',
+      description: 'Décapage par sablage de pièces métalliques et nettoyage de façades en pierre.',
+      image: './images/Sablage.jpeg',
+      gallery: [
+        { src: './images/Sablage.jpeg', description: 'Description for Sablage 1' },
+        { src: './images/Sablage1.jpeg', description: 'Description for Sablage 2' },
+        { src: './images/Sablage2.jpeg', description: 'Description for Sablage 3' },
+        { src: './images/Sablage3.jpg', description: 'Description for Sablage 4' },
+      ],
     },
   ];
 
