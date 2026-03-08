@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown, Phone, Download } from 'lucide-react';
 
 interface HeaderProps {
   scrollY: number;
@@ -9,36 +10,105 @@ const Header = ({ scrollY }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsScrolled(scrollY > 100);
   }, [scrollY]);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/#about' },
     {
       name: 'Services',
-      href: '#services',
-      dropdown: [
-        { name: 'Construction bâtiment', href: '#services' },
-        { name: 'Génie civil', href: '#services' },
-        { name: 'Charpente métallique', href: '#services' },
-        { name: 'Résine époxy', href: '#services' },
-        { name: 'Étanchéité', href: '#services' },
-        { name: 'Revêtement industriel', href: '#services' },
-        { name: 'Assainissement', href: '#services' },
+      href: '/#services',
+      megaMenu: [
+        {
+          category: 'Gros Œuvre',
+          links: [
+            { name: 'Construction bâtiment', path: '/construction-batiment' },
+            { name: 'Démolition des immobiles', path: '/demolition-immobiles' },
+            { name: 'Génie civil', path: '/genie-civil' },
+            { name: 'Béton armé', path: '/beton-arme' },
+            { name: 'Assainissement', path: '/assainissement' },
+          ],
+        },
+        {
+          category: 'Étanchéité & Traitement',
+          links: [
+            { name: 'Étanchéité & Imperméabilisation', path: '/etancheite-imperméabilisation' },
+            { name: 'Traitement de l’humidité', path: '/humidite' },
+            { name: 'Enduit de cuvelage', path: '/enduit-cuvelage' },
+            { name: 'Réparation des fissures et sablage', path: '/reparation-fissures-sablage' },
+          ],
+        },
+        {
+          category: 'Résine Époxy',
+          links: [
+            { name: 'Résine alimentaire', path: '/resine-alimentaire' },
+            { name: 'Résine antiacide', path: '/resine-antiacide' },
+            { name: 'Résine antidérapante', path: '/resine-antiderapante' },
+          ],
+        },
+        {
+          category: 'Nettoyage & Désinfection',
+          links: [
+            { name: 'Désinfection (sol, surfaces, machines)', path: '/nettoyage-desinfection' },
+            { name: 'Stérilisation par voie aérienne', path: '/sterilisation-aerienne' },
+          ],
+        },
+        {
+          category: 'Sols & Revêtements',
+          links: [
+            { name: 'Réparation des sols', path: '/reparation-sols' },
+            { name: 'Dallage industriel', path: '/revetement-dallage-industriel' },
+            { name: 'Béton imprimé', path: '/beton-imprime' },
+          ],
+        },
       ],
     },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#QuoteForm' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Contact', href: '/#QuoteForm' },
+    { name: 'Presentation', href: '/docs/resine epoxy- horm- X.pptx', isDownload: true },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // Check if it's a route path (starts with / but not /#)
+    if (href.startsWith('/') && !href.includes('#')) {
+      navigate(href);
+      setIsMenuOpen(false);
+      setIsServicesOpen(false);
+      return;
     }
+    
+    // Handle hash links
+    const [path, hash] = href.split('#');
+    if (hash) {
+      // If we're on a different route, navigate to home first
+      if (path && path !== '/') {
+        navigate(path);
+        setTimeout(() => {
+          const element = document.querySelector(`#${hash}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(`#${hash}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else if (href === '/') {
+      navigate('/');
+      window.scrollTo(0, 0);
+    }
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  };
+
+  const handleDropdownClick = (path: string) => {
+    navigate(path);
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
@@ -76,16 +146,16 @@ const Header = ({ scrollY }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#home');
+          <Link
+            to="/"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setIsMenuOpen(false);
             }}
             className="flex items-center gap-3"
           >
             <img src="./images/AdobeExpress-file.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -93,45 +163,67 @@ const Header = ({ scrollY }: HeaderProps) => {
               <div
                 key={link.name}
                 className="relative"
-                onMouseEnter={() => link.dropdown && setIsServicesOpen(true)}
-                onMouseLeave={() => link.dropdown && setIsServicesOpen(false)}
+                onMouseEnter={() => link.megaMenu && setIsServicesOpen(true)}
+                onMouseLeave={() => link.megaMenu && setIsServicesOpen(false)}
               >
-                <a
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
-                  className={`flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors hover:text-[#fbab39] ${
-                    isScrolled ? 'text-[#212529]' : 'text-white'
-                  }`}
-                >
-                  {link.name}
-                  {link.dropdown && <ChevronDown size={14} />}
-                </a>
+                {link.megaMenu ? (
+                  <button
+                    className={`flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors hover:text-[#fbab39] ${
+                      isScrolled ? 'text-[#212529]' : 'text-white'
+                    }`}
+                  >
+                    {link.name}
+                    {link.megaMenu && <ChevronDown size={14} />}
+                  </button>
+                ) : link.isDownload ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors hover:text-[#fbab39] ${
+                      isScrolled ? 'text-[#212529]' : 'text-white'
+                    }`}
+                  >
+                    {link.name}
+                    <Download size={16} className="ml-1" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className={`flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors hover:text-[#fbab39] ${
+                      isScrolled ? 'text-[#212529]' : 'text-white'
+                    }`}
+                  >
+                    {link.name}
+                  </button>
+                )}
 
-                {/* Dropdown Menu */}
-                {link.dropdown && (
+                {/* Mega Menu */}
+                {link.megaMenu && (
                   <div
-                    className={`absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg overflow-hidden transition-all duration-300 ${
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max max-w-4xl bg-white/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden border border-gray-200/50 transition-all duration-300 ${
                       isServicesOpen
                         ? 'opacity-100 translate-y-0 pointer-events-auto'
                         : 'opacity-0 -translate-y-4 pointer-events-none'
                     }`}
                   >
-                    <div className="py-2">
-                      {link.dropdown.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection(item.href);
-                          }}
-                          className="block px-5 py-3 text-sm text-[#212529] hover:bg-[#fbab39] hover:text-white transition-colors"
-                        >
-                          {item.name}
-                        </a>
+                    <div className="p-8 grid grid-cols-5 gap-x-8 gap-y-6">
+                      {link.megaMenu.map((category) => (
+                        <div key={category.category} className="space-y-4">
+                          <h3 className="font-bold text-sm text-[#fbab39] uppercase tracking-wider">{category.category}</h3>
+                          <ul className="space-y-3">
+                            {category.links.map((item) => (
+                              <li key={item.name}>
+                                <button
+                                  onClick={() => handleDropdownClick(item.path)}
+                                  className="block w-full text-left text-sm text-[#212529] hover:text-[#fbab39] transition-colors duration-300"
+                                >
+                                  {item.name}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -140,18 +232,13 @@ const Header = ({ scrollY }: HeaderProps) => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <a
-              href="#QuoteForm"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('#QuoteForm');
-              }}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={() => scrollToSection('/#QuoteForm')}
               className="btn-primary"
             >
               Demander un devis
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -176,40 +263,49 @@ const Header = ({ scrollY }: HeaderProps) => {
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <div key={link.name}>
-                <a
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (link.dropdown) {
-                      setIsServicesOpen(!isServicesOpen);
-                    } else {
-                      scrollToSection(link.href);
-                    }
-                  }}
-                  className="flex items-center justify-between text-lg font-medium text-[#212529] py-3 border-b border-gray-100"
-                >
-                  {link.name}
-                  {link.dropdown && (
-                    <ChevronDown
-                      size={20}
-                      className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
-                    />
-                  )}
-                </a>
-                {link.dropdown && isServicesOpen && (
+                {link.isDownload ? (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between w-full text-lg font-medium text-[#212529] py-3 border-b border-gray-100">
+                    <span>{link.name}</span>
+                    <Download size={20} />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      if (link.megaMenu) {
+                        setIsServicesOpen(!isServicesOpen);
+                      } else {
+                        scrollToSection(link.href);
+                      }
+                    }}
+                    className="flex items-center justify-between w-full text-lg font-medium text-[#212529] py-3 border-b border-gray-100"
+                  >
+                    {link.name}
+                    {link.megaMenu && (
+                      <ChevronDown
+                        size={20}
+                        className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
+                      />
+                    )}
+                  </button>
+                )}
+
+                {link.megaMenu && isServicesOpen && (
                   <div className="pl-4 py-2 space-y-2">
-                    {link.dropdown.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection(item.href);
-                        }}
-                        className="block text-sm text-gray-600 py-2 hover:text-[#fbab39]"
-                      >
-                        {item.name}
-                      </a>
+                    {link.megaMenu.map((category) => (
+                      <div key={category.category}>
+                        <div className="text-sm text-gray-800 font-bold py-2 mt-2">{category.category}</div>
+                        <div className="pl-4 space-y-2">
+                          {category.links.map((item) => (
+                            <button
+                              key={item.name}
+                              onClick={() => handleDropdownClick(item.path)}
+                              className="block w-full text-left text-sm text-gray-600 py-2 hover:text-[#fbab39]"
+                            >
+                              {item.name}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 )}
@@ -217,16 +313,12 @@ const Header = ({ scrollY }: HeaderProps) => {
             ))}
           </nav>
           <div className="mt-auto pb-8">
-            <a
-              href="#QuoteForm"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('#QuoteForm');
-              }}
+            <button
+              onClick={() => scrollToSection('/#QuoteForm')}
               className="btn-primary w-full"
             >
               Demander un devis
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,12 +22,12 @@ const Footer = () => {
   ];
 
   const services = [
-    'Construction bâtiment',
-    'Génie civil',
-    'Charpente métallique',
-    'Résine époxy',
-    'Étanchéité',
-    'Revêtement industriel',
+    { name: 'Construction bâtiment', path: '/construction-batiment' },
+    { name: 'Génie civil', path: '/genie-civil' },
+    { name: 'Charpente métallique', path: '/charpente-metallique' },
+    { name: 'Résine époxy', path: '/resine-epoxy' },
+    { name: 'Étanchéité', path: '/etancheite' },
+    { name: 'Revêtement industriel', path: '/revetement-industriel' },
   ];
 
 
@@ -82,18 +83,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 font-['Teko'] tracking-wide">Nos Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('#services');
-                    }}
+                <li key={service.name}>
+                  <Link
+                    to={service.path}
                     className="text-gray-400 hover:text-[#fbab39] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-0 h-[1px] bg-[#fbab39] group-hover:w-4 transition-all" />
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -146,12 +143,12 @@ const Footer = () => {
               © {new Date().getFullYear()} HORMEXPRES. Tous droits réservés.
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-500">
-              <a href="#" className="hover:text-[#fbab39] transition-colors">
+              <p className="hover:text-[#fbab39] transition-colors">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="hover:text-[#fbab39] transition-colors">
+              </p>
+              <p  className="hover:text-[#fbab39] transition-colors ">
                 Conditions d'utilisation
-              </a>
+              </p>
             </div>
           </div>
         </div>

@@ -47,12 +47,18 @@ const About = () => {
   ];
 
   const commitments = [
-    'Respect des délais',
-    'Transparence totale',
-    'Prix compétitifs',
-    'Support technique',
-    'Garantie qualité',
-    'Sécurité optimale',
+    'construction de bâtiment',
+    'démolition des immobiles',
+    'génie civil .assainissement',
+    'Etanchéité-imperméabilisation /L’humidité',
+    'l’enduit de cuvelage / réparation des fissure et sablage',
+    'Résine époxy : résine alimentaire-résine antiacide-résine antidérapante',
+    'Nettoyage- ( spécialise de la désinfection- sol – surfaces –machines et stérilisation- voie aérienne )',
+    'industriels ',
+    'hôpitaux ',
+    'Traitements de réparation des sols',
+    'Revêtements -Dallage industriel-béton imprimée……',
+    'Béton arme – assainissement – génie civil',
   ];
 
   return (
@@ -100,15 +106,8 @@ const About = () => {
               <span className="text-[#fbab39]"> L'INDUSTRIE</span> DE LA CONSTRUCTION
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Hormexpres est une entreprise de construction et de génie civil basée à Casablanca. 
-              Avec plus de 3 ans d'expérience, nous avons établi notre réputation comme leader 
-              dans la région, offrant des services de construction de haute qualité.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              Notre équipe d'experts qualifiés s'engage à transformer vos visions en réalité, 
-              en respectant les délais, les budgets et les normes de qualité les plus élevées. 
-              De la construction de bâtiments aux travaux de génie civil, nous couvrons tous 
-              vos besoins avec professionnalisme et expertise.
+             Nous avons le grand plaisir de vous présenter notre société :
+              Hormexpres - sarl qui est un groupe de prestation de main d œuvre composée des professionnelles de compétences expérimentées dans tous les travaux de :
             </p>
 
             {/* Commitments */}
@@ -137,7 +136,7 @@ const About = () => {
               className={`group p-8 bg-[#f2f6f7] rounded-lg hover:bg-[#212529] transition-all duration-500 hover:delay-0 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              style={{ transitionDelay: `${400 + index * 100}ms` }}
+              style={{ transitionDelay: `${1 + index * 10}ms` }}
             >
               <div className="w-14 h-14 bg-[#fbab39] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <feature.icon size={28} className="text-white" />
@@ -166,9 +165,9 @@ const About = () => {
               <span className="text-[#fbab39]"> INNOVANTES</span> POUR VOS PROJETS
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Nous investissons continuellement dans les dernières technologies et méthodes 
-              de construction pour offrir à nos clients des solutions innovantes et durables. 
-              Notre approche combine expertise traditionnelle et technologies de pointe.
+              Hormexpres se distingue dans le domaine de la construction et du génie civil par son expertise et son savoir-faire reconnus.
+              Notre équipe d’ingénieurs d’études, chargés d’affaires et techniciens apporte un solide support technique à notre réseau commercial.
+              Cette collaboration garantit une approche professionnelle et efficace pour accompagner chaque projet.
             </p>
             <div className="space-y-4">
               {[

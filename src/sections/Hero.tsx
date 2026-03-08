@@ -102,9 +102,9 @@ const Hero = () => {
             }`}
             style={{ transitionDelay: '0.9s' }}
           >
-            Hormexpres est une entreprise de construction et de génie civil offrant des services 
-            de haute qualité avec des prix compétitifs. Nous transformons vos visions en réalité 
-            avec précision et expertise.
+            Depuis sa création, la société , hormexpres a développé une gamme complète des travaux de construction bâtiment et génie civil.
+            Une équipe très qualifiée s'appuyant sur les dernières technologies de l'information vous offre des services et des prix les plus compétitifs du marché.
+            Avec des plus larges références.
           </p>
 
           {/* CTA Buttons */}

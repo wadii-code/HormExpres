@@ -40,7 +40,6 @@ const Services = () => {
       description: 'Travaux de construction et de génie civil incluant fondations, structures, routes et infrastructures.',
       image: './images/civil.jpg',
       gallery: [
-        { src: './images/civil.jpg', description: '  civil ' },
         { src: './images/civil1.jpg', description: '  civil ' },
         { src: './images/civil2.jpg', description: '  civil ' },
         { src: './images/civil3.jpg', description: '  civil ' },
@@ -52,9 +51,8 @@ const Services = () => {
       icon: Hammer,
       title: 'Charpente métallique',
       description: 'Conception et installation de charpentes métalliques pour tous types de constructions.',
-      image: './images/Charpente.jpeg',
+      image: './images/Charpente5.jpg',
       gallery: [
-        { src: './images/Charpente.jpeg', description: ' Charpente ' },
         { src: './images/Charpente1.jpeg', description: ' Charpente ' },
         { src: './images/Charpente2.jpeg', description: ' Charpente ' },
         { src: './images/Charpente3.jpg', description: ' Charpente ' },
@@ -93,7 +91,7 @@ const Services = () => {
       image: './images/Étanchéité.jpeg',
       gallery: [
         { src: './images/Étanchéité.jpeg', description: ' Étanchéité ' },
-        { src: './images/Étanchéité1.jpg', description: ' Étanchéité ' },
+        { src: './images/Dallage.jpeg', description: ' Étanchéité ' },
       ],
     },
     {
@@ -102,7 +100,6 @@ const Services = () => {
       description: 'Dallage industriel, béton imprimé et revêtements de sols professionnels.',
       image: './images/Dallage.jpeg',
       gallery: [
-        { src: './images/Dallage.jpeg', description: ' Dallage ' },
         { src: './images/Dallage1.jpeg', description: ' Dallage ' },
         { src: './images/Dallage3.jpg', description: ' Dallage ' },
         { src: './images/Dallage4.jpg', description: ' Dallage ' },
@@ -117,7 +114,6 @@ const Services = () => {
       gallery: [
         { src: './images/Sablage.jpeg', description: ' Sablage ' },
         { src: './images/Sablage1.jpeg', description: ' Sablage ' },
-        { src: './images/Sablage2.jpeg', description: ' Sablage ' },
         { src: './images/Sablage3.jpg', description: ' Sablage ' },
       ],
     },

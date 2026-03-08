@@ -144,13 +144,10 @@ ${formData.message}
                     Nouvelle demande de devis
                   </h3>
                   <p className="text-gray-400 mt-2 text-sm">
-                    Étape 1 sur 1 • Remplissage du formulaire
+                    Remplissez le formulaire
                   </p>
                 </div>
-                <div className="hidden md:flex items-center gap-2 text-amber-400">
-                  <Clock className="w-5 h-5" />
-                  <span className="text-sm font-medium">2 min</span>
-                </div>
+                
               </div>
             </div>
 
