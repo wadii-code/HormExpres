@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Download } from 'lucide-react';
 
 interface HeaderProps {
@@ -10,11 +10,29 @@ const Header = ({ scrollY }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsScrolled(scrollY > 100);
   }, [scrollY]);
+
+  // Handle mouse enter with delay prevention
+  const handleMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setIsServicesOpen(true);
+  };
+
+  // Handle mouse leave with delay
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 300); // 300ms delay before closing
+    setHoverTimeout(timeout);
+  };
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -26,9 +44,8 @@ const Header = ({ scrollY }: HeaderProps) => {
         {
           category: 'Gros Œuvre',
           links: [
-            { name: 'Construction bâtiment', path: '/construction-batiment' },
+            { name: 'Construction & Génie Civil', path: '/construction-genie-civil' },
             { name: 'Démolition des immobiles', path: '/demolition-immobiles' },
-            { name: 'Génie civil', path: '/genie-civil' },
             { name: 'Béton armé', path: '/beton-arme' },
             { name: 'Assainissement', path: '/assainissement' },
           ],
@@ -37,7 +54,6 @@ const Header = ({ scrollY }: HeaderProps) => {
           category: 'Étanchéité & Traitement',
           links: [
             { name: 'Étanchéité & Imperméabilisation', path: '/etancheite-imperméabilisation' },
-            { name: 'Traitement de l’humidité', path: '/humidite' },
             { name: 'Enduit de cuvelage', path: '/enduit-cuvelage' },
             { name: 'Réparation des fissures et sablage', path: '/reparation-fissures-sablage' },
           ],
@@ -45,15 +61,12 @@ const Header = ({ scrollY }: HeaderProps) => {
         {
           category: 'Résine Époxy',
           links: [
-            { name: 'Résine alimentaire', path: '/resine-alimentaire' },
-            { name: 'Résine antiacide', path: '/resine-antiacide' },
-            { name: 'Résine antidérapante', path: '/resine-antiderapante' },
+            { name: 'Résine Époxy', path: '/resine-epoxy' },
           ],
         },
         {
           category: 'Nettoyage & Désinfection',
           links: [
-            { name: 'Désinfection (sol, surfaces, machines)', path: '/nettoyage-desinfection' },
             { name: 'Stérilisation par voie aérienne', path: '/sterilisation-aerienne' },
           ],
         },
@@ -62,14 +75,13 @@ const Header = ({ scrollY }: HeaderProps) => {
           links: [
             { name: 'Réparation des sols', path: '/reparation-sols' },
             { name: 'Dallage industriel', path: '/revetement-dallage-industriel' },
-            { name: 'Béton imprimé', path: '/beton-imprime' },
           ],
         },
       ],
     },
     { name: 'Projects', href: '/#projects' },
     { name: 'Contact', href: '/#QuoteForm' },
-    { name: 'Presentation', href: '/docs/resine epoxy- horm- X.pptx', isDownload: true },
+    { name: 'Presentation', href: '/docs/resine epoxy- horm- X.pdf', isDownload: true },
   ];
 
   const scrollToSection = (href: string) => {
@@ -107,11 +119,7 @@ const Header = ({ scrollY }: HeaderProps) => {
     setIsServicesOpen(false);
   };
 
-  const handleDropdownClick = (path: string) => {
-    navigate(path);
-    setIsMenuOpen(false);
-    setIsServicesOpen(false);
-  };
+
 
   return (
     <header
@@ -146,8 +154,8 @@ const Header = ({ scrollY }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            to="/"
+          <a
+            href="/"
             onClick={() => {
               window.scrollTo(0, 0);
               setIsMenuOpen(false);
@@ -155,7 +163,7 @@ const Header = ({ scrollY }: HeaderProps) => {
             className="flex items-center gap-3"
           >
             <img src="./images/AdobeExpress-file.png" alt="HORMEXPRES CONSTRUCTION" className="h-12" />
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -163,17 +171,18 @@ const Header = ({ scrollY }: HeaderProps) => {
               <div
                 key={link.name}
                 className="relative"
-                onMouseEnter={() => link.megaMenu && setIsServicesOpen(true)}
-                onMouseLeave={() => link.megaMenu && setIsServicesOpen(false)}
+                onMouseEnter={() => link.megaMenu && handleMouseEnter()}
+                onMouseLeave={() => link.megaMenu && handleMouseLeave()}
               >
                 {link.megaMenu ? (
                   <button
+                    onClick={() => scrollToSection(link.href)}
                     className={`flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors hover:text-[#fbab39] ${
                       isScrolled ? 'text-[#212529]' : 'text-white'
                     }`}
                   >
                     {link.name}
-                    {link.megaMenu && <ChevronDown size={14} />}
+                    {link.megaMenu && <ChevronDown size={14} className="transition-transform duration-200" />}
                   </button>
                 ) : link.isDownload ? (
                   <a
@@ -198,33 +207,53 @@ const Header = ({ scrollY }: HeaderProps) => {
                   </button>
                 )}
 
-                {/* Mega Menu */}
+                {/* Mega Menu - Improved Styling */}
                 {link.megaMenu && (
                   <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max max-w-4xl bg-white/95 backdrop-blur-md shadow-xl rounded-lg overflow-hidden border border-gray-200/50 transition-all duration-300 ${
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[900px] max-w-[90vw] bg-white shadow-2xl rounded-xl overflow-hidden border border-gray-100 transition-all duration-300 ${
                       isServicesOpen
                         ? 'opacity-100 translate-y-0 pointer-events-auto'
-                        : 'opacity-0 -translate-y-4 pointer-events-none'
+                        : 'opacity-0 -translate-y-2 pointer-events-none'
                     }`}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                   >
-                    <div className="p-8 grid grid-cols-5 gap-x-8 gap-y-6">
+                    {/* Gradient top border */}
+                    <div className="h-1 bg-gradient-to-r from-[#fbab39] via-[#f59e0b] to-[#fbab39]" />
+                    
+                    <div className="p-6 grid grid-cols-5 gap-6">
                       {link.megaMenu.map((category) => (
-                        <div key={category.category} className="space-y-4">
-                          <h3 className="font-bold text-sm text-[#fbab39] uppercase tracking-wider">{category.category}</h3>
-                          <ul className="space-y-3">
+                        <div key={category.category} className="space-y-3">
+                          <h3 className="font-bold text-xs text-[#212529] uppercase tracking-wider border-b border-gray-100 pb-2">{category.category}</h3>
+                          <ul className="space-y-2">
                             {category.links.map((item) => (
                               <li key={item.name}>
-                                <button
-                                  onClick={() => handleDropdownClick(item.path)}
-                                  className="block w-full text-left text-sm text-[#212529] hover:text-[#fbab39] transition-colors duration-300"
+                                <Link
+                                  to={item.path}
+                                  onClick={() => setIsServicesOpen(false)}
+                                  className="block w-full text-left text-sm text-gray-600 hover:text-[#fbab39] hover:translate-x-1 transition-all duration-200 font-medium"
                                 >
                                   {item.name}
-                                </button>
+                                </Link>
                               </li>
                             ))}
                           </ul>
                         </div>
                       ))}
+                    </div>
+                    
+                    {/* Footer with CTA */}
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-50 px-6 py-3 border-t border-gray-100 flex items-center justify-between">
+                      <span className="text-xs text-gray-500">Contactez-nous pour plus d'informations</span>
+                      <button 
+                        onClick={() => {
+                          scrollToSection('/#QuoteForm');
+                          setIsServicesOpen(false);
+                        }}
+                        className="text-xs font-bold text-[#fbab39] hover:text-[#e99a2e] transition-colors uppercase tracking-wider"
+                      >
+                        Demander un devis →
+                      </button>
                     </div>
                   </div>
                 )}
@@ -296,13 +325,17 @@ const Header = ({ scrollY }: HeaderProps) => {
                         <div className="text-sm text-gray-800 font-bold py-2 mt-2">{category.category}</div>
                         <div className="pl-4 space-y-2">
                           {category.links.map((item) => (
-                            <button
+                            <Link
                               key={item.name}
-                              onClick={() => handleDropdownClick(item.path)}
+                              to={item.path}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsServicesOpen(false);
+                              }}
                               className="block w-full text-left text-sm text-gray-600 py-2 hover:text-[#fbab39]"
                             >
                               {item.name}
-                            </button>
+                            </Link>
                           ))}
                         </div>
                       </div>

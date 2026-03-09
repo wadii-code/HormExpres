@@ -2,7 +2,6 @@
 
 import { useEffect, useState, type ReactNode, type TouchEvent, type WheelEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
 
 interface ScrollExpandPageProps {
@@ -162,13 +161,13 @@ const ScrollExpandPage = ({
   return (
     <div className="transition-colors duration-700 ease-in-out overflow-x-hidden bg-[#212529]">
       {/* Back Button */}
-      <Link
-        to="/"
+      <a
+        href="/"
         className="fixed top-24 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors"
       >
         <ArrowLeft size={18} />
         <span className="text-sm font-medium">Retour</span>
-      </Link>
+      </a>
 
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
         <div className="relative w-full flex flex-col items-center min-h-[100dvh]">

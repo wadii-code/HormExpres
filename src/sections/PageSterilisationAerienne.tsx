@@ -1,16 +1,11 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
-const sterilisationImages = [
-  { src: './images/sterilisation-aerienne.jpeg', alt: 'Stérilisation voie aérienne 1' },
-  { src: './images/sterilisation-aerienne1.jpeg', alt: 'Stérilisation voie aérienne 2' },
-  { src: './images/sterilisation-aerienne2.jpeg', alt: 'Stérilisation voie aérienne 3' },
-];
 
 const PageSterilisationAerienne = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/sterilisation.jpeg"
+      mediaSrc="./images/neww.png"
       bgColor="#000"
       title="Stérilisation par Voie Aérienne"
       subtitle="Désinfection terminale pour les environnements critiques"
@@ -43,22 +38,6 @@ const PageSterilisationAerienne = () => {
                 <li>✓ Zones de production agroalimentaire</li>
               </ul>
             </div>
-          </div>
-
-          <h3 className="text-2xl font-bold text-[#212529] mb-6">Nos Procédés de Stérilisation</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sterilisationImages.map((img, index) => (
-              <div key={index} className="relative group overflow-hidden rounded-lg">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-medium">Stérilisation Aérienne</span>
-                </div>
-              </div>
-            ))}
           </div>
 
           <div className="mt-12 text-center">

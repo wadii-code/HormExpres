@@ -10,6 +10,9 @@ const genieCivilImages = [
   { src: './images/genie-civil-travaux.jpeg', alt: 'Génie civil 7' },
   { src: './images/construction-genie-civil.jpg', alt: 'Génie civil 8' },
   { src: './images/civil11.jpg', alt: 'Génie civil 9' },
+  { src: './images/cheval2.jpeg', alt: 'Génie civil 9' },
+  { src: './images/cheval1.jpeg', alt: 'Génie civil 9' },
+  { src: './images/cheval3.jpeg', alt: 'Génie civil 9' },
 ];
 
 const PageGenieCivil = () => {

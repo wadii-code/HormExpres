@@ -70,7 +70,7 @@ const Projects = () => {
       location: 'Agadir',
       year: '2023',
       image: getImagePath('epoxy.jpeg', 5),
-      gallery: ['./images/epoxy1.jpeg', './images/epoxy2.jpg', './images/epoxy3.jpg'],
+      gallery: ['./images/epoxy1.jpeg', './images/epoxy2.jpg'],
       description: 'Application de résine époxy alimentaire sur 2000 m².',
     },
     {
@@ -79,8 +79,8 @@ const Projects = () => {
       category: 'revetement',
       location: 'Casablanca',
       year: '2023',
-      image: getImagePath('Dallage.jpeg', 7),
-      gallery: ['./images/Dallage1.jpeg', './images/Dallage3.jpg', './images/Dallage4.jpg', './images/Dallage5.jpg'],
+      image: getImagePath('Dallage3.jpg', 7),
+      gallery: [ './images/Dallage1.jpeg', './images/Dallage4.jpg', './images/Dallage5.jpg'],
       description: 'Réalisation d\'un dallage industriel de 10 000 m².',
     },
     {
@@ -90,7 +90,7 @@ const Projects = () => {
       location: 'Casablanca',
       year: '2023',
       image: getImagePath('Peinture.jpeg', 9),
-      gallery: ['./images/Peinture1.jpeg', './images/Peinture2.jpeg', './images/Peinture3.jpeg'],
+      gallery: ['./images/Peinture1.jpeg', './images/Peinture3.jpeg'],
       description: 'Peinture extérieure et ravalement de façade d\'un immeuble de 10 étages.',
     },
     {
@@ -99,8 +99,8 @@ const Projects = () => {
       category: 'etancheite',
       location: 'Tanger',
       year: '2023',
-      image: getImagePath('Étanchéité.jpeg', 11),
-      gallery: [],
+      image: getImagePath('etancheite.jpg', 11),
+      gallery: ['./images/etancheite.jpeg'],
       description: 'Mise en place d\'un système d\'étanchéité multicouche sur 1000 m².',
     },
     {
@@ -109,8 +109,8 @@ const Projects = () => {
       category: 'sablage',
       location: 'Rabat',
       year: '2022',
-      image: getImagePath('Sablage.jpeg', 14),
-      gallery: ['./images/Sablage1.jpeg', './images/Sablage3.jpg'],
+      image: getImagePath('sablage.png', 14),
+      gallery: ['./images/sablage1.png', './images/sablage2.png'],
       description: 'Sablage et nettoyage d\'une façade en pierre de taille.',
     },
   ];

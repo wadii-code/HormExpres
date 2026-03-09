@@ -1,19 +1,16 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const reparationImages = [
-  { src: './images/reparation.jpg', alt: 'Réparation fissures 1' },
-  { src: './images/sablage.jpg', alt: 'Sablage 1' },
-  { src: './images/reparation1.jpg', alt: 'Réparation fissures 2' },
-  { src: './images/sablage1.jpg', alt: 'Sablage 2' },
-  { src: './images/reparation2.jpg', alt: 'Réparation fissures 3' },
-  { src: './images/sablage2.jpg', alt: 'Sablage 3' },
+  { src: './images/sablage2.png', alt: 'Réparation fissures 1' },
+  { src: './images/sablage1.png', alt: 'Sablage 1' },
+
 ];
 
 const PageReparationFissuresSablage = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/reparation.jpg"
+      mediaSrc="./images/sablage.png"
       bgColor="#000"
       title="Réparation de Fissures & Sablage"
       subtitle="Restauration et préparation de surfaces"

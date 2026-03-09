@@ -1,17 +1,12 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
-const cuvelageImages = [
-  { src: './images/cavelage.jpg', alt: 'Enduit de cuvelage 1' },
-  { src: './images/cavelage0.jpg', alt: 'Enduit de cuvelage 2' },
-  { src: './images/etancheite.jpeg', alt: 'Enduit de cuvelage 3' },
-  { src: './images/etancheite.jpg', alt: 'Enduit de cuvelage 4' },
-];
+
 
 const PageEnduitCuvelage = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/cavelage.jpg"
+      mediaSrc="./images/cuvelage.jpg"
       bgColor="#000"
       title="Enduit de Cuvelage"
       subtitle="Protection efficace pour les murs enterrés"
@@ -44,22 +39,6 @@ const PageEnduitCuvelage = () => {
                 <li>✓ Réservoirs et bassins</li>
               </ul>
             </div>
-          </div>
-
-          <h3 className="text-2xl font-bold text-[#212529] mb-6">Nos Chantiers de Cuvelage</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cuvelageImages.map((img, index) => (
-              <div key={index} className="relative group overflow-hidden rounded-lg">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-medium">Cuvelage</span>
-                </div>
-              </div>
-            ))}
           </div>
 
           <div className="mt-12 text-center">

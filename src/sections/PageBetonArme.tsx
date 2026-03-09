@@ -1,19 +1,16 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const betonArmeImages = [
-  { src: './images/civil1.jpeg', alt: 'Béton armé 1' },
-  { src: './images/civil1.jpg', alt: 'Béton armé 2' },
-  { src: './images/civil2.jpg', alt: 'Béton armé 3' },
-  { src: './images/civil3.jpg', alt: 'Béton armé 4' },
-  { src: './images/civil4.jpg', alt: 'Béton armé 5' },
-  { src: './images/construction-genie-civil.jpg', alt: 'Béton armé 6' },
+  { src: './images/beton-arme.jpg', alt: 'Béton armé 1' },
+  { src: './images/beton-arme2.jpg', alt: 'Béton armé 2' },
+  { src: './images/beton-arme3.jpg', alt: 'Béton armé 3' },
 ];
 
 const PageBetonArme = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/beton.jpg"
+      mediaSrc="./images/beton-arme-officiel.jpg"
       bgColor="#000"
       title="Béton Armé"
       subtitle="Structures en béton armé pour tous vos projets"

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './sections/Header';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -9,7 +10,22 @@ import Suppliers from './sections/Suppliers';
 import Contact from './sections/Contact';
 import QuoteForm from './sections/QuoteForm';
 import Footer from './sections/Footer';
+
+// Page Components
+import PageDemolitionImmobiles from './sections/PageDemolitionImmobiles';
+import PageBetonArme from './sections/PageBetonArme';
+import PageAssainissement from './sections/PageAssainissement';
+import PageEtancheiteImperméabilisation from './sections/PageEtancheiteImperméabilisation';
+import PageEnduitCuvelage from './sections/PageEnduitCuvelage';
+import PageReparationFissuresSablage from './sections/PageReparationFissuresSablage';
+import PageResineEpoxy from './sections/PageResineEpoxy';
+import PageSterilisationAerienne from './sections/PageSterilisationAerienne';
+import ScrollToTop from './components/ScrollTop';
 import './App.css';
+import PageRevetementDallageIndustriel from './sections/PageRevetementDallageIndustriel';
+import './App.css';
+import PageReparationSols from './sections/PageReparationSols';
+import PageConstructionBatiment from './sections/PageConstructionBatiment';
 
 
 function App() {
@@ -25,59 +41,36 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Implement scroll position preservation on page refresh
-  useEffect(() => {
-    const savedScrollY = sessionStorage.getItem('scrollY');
-    if (savedScrollY) {
-      window.scrollTo(0, parseInt(savedScrollY, 10));
-    }
-
-    const handleBeforeUnload = () => {
-      sessionStorage.setItem('scrollY', String(window.scrollY));
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
-
-  // Scroll reveal animation
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div ref={mainRef} className="min-h-screen bg-white overflow-x-hidden">
+      <ScrollToTop />
       <Header scrollY={scrollY} />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Testimonials />
-        <Suppliers />
-        <Contact />
-        <QuoteForm />
-      </main>
+      <Routes>
+        <Route path="/" element={
+          <main>
+            <Hero />
+            <About />
+            <Services />
+            <Projects />
+            <Testimonials />
+            <Suppliers />
+            <Contact />
+            <QuoteForm />
+          </main>
+        } />
+        {/* Service Pages */}
+        <Route path="/construction-genie-civil" element={<PageConstructionBatiment />} />
+        <Route path="/demolition-immobiles" element={<PageDemolitionImmobiles />} />
+        <Route path="/beton-arme" element={<PageBetonArme />} />
+        <Route path="/assainissement" element={<PageAssainissement />} />
+        <Route path="/etancheite-imperméabilisation" element={<PageEtancheiteImperméabilisation />} />
+        <Route path="/enduit-cuvelage" element={<PageEnduitCuvelage />} />
+        <Route path="/reparation-fissures-sablage" element={<PageReparationFissuresSablage />} />
+        <Route path="/resine-epoxy" element={<PageResineEpoxy />} />
+        <Route path="/sterilisation-aerienne" element={<PageSterilisationAerienne />} />
+        <Route path="/reparation-sols" element={<PageReparationSols />} />
+        <Route path="/revetement-dallage-industriel" element={<PageRevetementDallageIndustriel />} />
+      </Routes>
       <Footer />
     </div>
   );

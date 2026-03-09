@@ -1,19 +1,18 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const epoxyImages = [
-  { src: './images/resine.jpg', alt: 'Résine époxy 1' },
-  { src: './images/resine1.jpg', alt: 'Résine époxy 2' },
-  { src: './images/resine2.jpg', alt: 'Résine époxy 3' },
-  { src: './images/resine3.jpg', alt: 'Résine époxy 4' },
-  { src: './images/resine4.jpg', alt: 'Résine époxy 5' },
-  { src: './images/resine5.jpg', alt: 'Résine époxy 6' },
+  { src: './images/epoxy.jpeg', alt: 'Résine époxy 1' },
+  { src: './images/epoxy2.jpg', alt: 'Résine époxy 2' },
+  { src: './images/epoxy6.png', alt: 'Résine époxy 3' },
+  { src: './images/epoxy1.jpeg', alt: 'Résine époxy 4' },
+  { src: './images/epoxy5.png', alt: 'Résine époxy 5' },
 ];
 
 const PageResineEpoxy = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/resine.jpg"
+      mediaSrc="./images/epoxy3.png"
       bgColor="#000"
       title="Résine Époxy"
       subtitle="Revêtements industriels de qualité supérieure"

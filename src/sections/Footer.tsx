@@ -1,34 +1,50 @@
 import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const navigate = useNavigate();
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavigate = (href: string) => {
+    // It's a page route
+    if (href.startsWith('/')) {
+      navigate(href);
+      window.scrollTo(0, 0);
+    } else { // It's a hash link
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '#QuoteForm' },
   ];
 
   const services = [
-    { name: 'Construction bâtiment', path: '/construction-batiment' },
-    { name: 'Génie civil', path: '/genie-civil' },
-    { name: 'Charpente métallique', path: '/charpente-metallique' },
-    { name: 'Résine époxy', path: '/resine-epoxy' },
-    { name: 'Étanchéité', path: '/etancheite' },
-    { name: 'Revêtement industriel', path: '/revetement-industriel' },
+    { name: 'Construction & Génie Civil', path: '/construction-genie-civil' },
+    { name: 'Démolition des immobiles', path: '/demolition-immobiles' },
+    { name: 'Béton armé', path: '/beton-arme' },
+    { name: 'Assainissement', path: '/assainissement' },
+    { name: 'Étanchéité & Imperméabilisation', path: '/etancheite-imperméabilisation' },
+    { name: 'Traitement de l’humidité', path: '/humidite' },
+    { name: 'Enduit de cuvelage', path: '/enduit-cuvelage' },
+    { name: 'Réparation des fissures et sablage', path: '/reparation-fissures-sablage' },
+    { name: 'Résine Époxy', path: '/resine-epoxy' },
+    { name: 'Désinfection (sol, surfaces, machines)', path: '/nettoyage-desinfection' },
+    { name: 'Stérilisation par voie aérienne', path: '/sterilisation-aerienne' },
+    { name: 'Réparation des sols', path: '/reparation-sols' },
+    { name: 'Dallage industriel', path: '/revetement-dallage-industriel' },
+    { name: 'Béton imprimé', path: '/beton-imprime' },
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
 
 
@@ -62,17 +78,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
+                  <button
+                    onClick={() => handleNavigate(link.href)}
                     className="text-gray-400 hover:text-[#fbab39] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-0 h-[1px] bg-[#fbab39] group-hover:w-4 transition-all" />
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -84,13 +96,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link
-                    to={service.path}
+                  <a
+                    href={service.path}
                     className="text-gray-400 hover:text-[#fbab39] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-0 h-[1px] bg-[#fbab39] group-hover:w-4 transition-all" />
                     {service.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

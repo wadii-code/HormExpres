@@ -1,12 +1,10 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const assainissementImages = [
-  { src: './images/civil1.jpeg', alt: 'Assainissement 1' },
-  { src: './images/civil1.jpg', alt: 'Assainissement 2' },
-  { src: './images/civil2.jpg', alt: 'Assainissement 3' },
-  { src: './images/civil3.jpg', alt: 'Assainissement 4' },
-  { src: './images/civil4.jpg', alt: 'Assainissement 5' },
-  { src: './images/civil5.jpg', alt: 'Assainissement 6' },
+  { src: './images/assainissement1.jpg', alt: 'Assainissement 1' },
+  { src: './images/assainissement2.jpg', alt: 'Assainissement 1' },
+  { src: './images/assainissement3.jpg', alt: 'Assainissement 1' },
+
 ];
 
 const PageAssainissement = () => {

@@ -4,16 +4,15 @@ const demolitionImages = [
   { src: './images/civil6.jpg', alt: 'Démolition 1' },
   { src: './images/civil7.jpeg', alt: 'Démolition 2' },
   { src: './images/civil8.jpeg', alt: 'Démolition 3' },
-  { src: './images/civil9-crucial.jpeg', alt: 'Démolition 4' },
   { src: './images/civil10.jpg', alt: 'Démolition 5' },
-  { src: './images/civil11.jpg', alt: 'Démolition 6' },
+  { src: './images/civil.jpg', alt: 'Démolition 5' },
 ];
 
 const PageDemolitionImmobiles = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/civil.jpg"
+      mediaSrc="./images/hero-bg.jpg"
       bgColor="#000"
       title="Démolition d'Immeubles"
       subtitle="Solutions de démolition sécurisées et efficaces"

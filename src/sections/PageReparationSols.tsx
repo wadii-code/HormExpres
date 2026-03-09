@@ -1,19 +1,16 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const reparationSolsImages = [
-  { src: './images/reparation.jpg', alt: 'Réparation de sols 1' },
-  { src: './images/reparation1.jpg', alt: 'Réparation de sols 2' },
-  { src: './images/reparation2.jpg', alt: 'Réparation de sols 3' },
-  { src: './images/reparation3.jpg', alt: 'Réparation de sols 4' },
-  { src: './images/reparation4.jpg', alt: 'Réparation de sols 5' },
-  { src: './images/reparation5.jpg', alt: 'Réparation de sols 6' },
+  { src: './images/earthquike.png', alt: 'Réparation de sols 1' },
+  { src: './images/Construction-Bâtiment2.jpg', alt: 'Réparation de sols 2' },
+  { src: './images/reparation-du-sol1.png', alt: 'Réparation de sols 4' },
 ];
 
 const PageReparationSols = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/reparation.jpg"
+      mediaSrc="./images/genie-civil-travaux.jpeg"
       bgColor="#000"
       title="Réparation de Sols"
       subtitle="Remise en état de vos sols industriels"

@@ -3,8 +3,8 @@ import ScrollExpandPage from '../components/ScrollExpandPage';
 const etancheiteImages = [
   { src: './images/etancheite.jpeg', alt: 'Étanchéité 1' },
   { src: './images/etancheite.jpg', alt: 'Étanchéité 2' },
-  { src: './images/cavelage.jpg', alt: 'Étanchéité 3' },
-  { src: './images/cavelage0.jpg', alt: 'Étanchéité 4' },
+  { src: './images/echanteite.jpg', alt: 'Étanchéité 3' },
+  { src: './images/etancheite4.png', alt: 'Étanchéité 4' },
 ];
 
 const PageEtancheiteImperméabilisation = () => {

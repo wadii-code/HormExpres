@@ -1,12 +1,9 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const dallageImages = [
-  { src: './images/dallage.jpg', alt: 'Dallage industriel 1' },
-  { src: './images/dallage1.jpg', alt: 'Dallage industriel 2' },
-  { src: './images/dallage2.jpg', alt: 'Dallage industriel 3' },
-  { src: './images/dallage3.jpg', alt: 'Dallage industriel 4' },
-  { src: './images/dallage4.jpg', alt: 'Dallage industriel 5' },
-  { src: './images/dallage5.jpg', alt: 'Dallage industriel 6' },
+  { src: './images/Dallage3.jpg', alt: 'Dallage industriel 3' },
+    { src: './images/Dallage5.jpg', alt: 'Dallage industriel 5' },
+  { src: './images/Dallage4.jpg', alt: 'Dallage industriel 6' },
 ];
 
 const PageRevetementDallageIndustriel = () => {
