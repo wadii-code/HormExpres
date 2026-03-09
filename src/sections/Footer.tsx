@@ -93,13 +93,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a
-                    href={service.path}
+                  <p
                     className="text-gray-400 hover:text-[#fbab39] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-0 h-[1px] bg-[#fbab39] group-hover:w-4 transition-all" />
                     {service.name}
-                  </a>
+                  </p>
                 </li>
               ))}
             </ul>
