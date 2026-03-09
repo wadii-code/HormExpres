@@ -31,15 +31,12 @@ const Footer = () => {
     { name: 'Béton armé', path: '/beton-arme' },
     { name: 'Assainissement', path: '/assainissement' },
     { name: 'Étanchéité & Imperméabilisation', path: '/etancheite-imperméabilisation' },
-    { name: 'Traitement de l’humidité', path: '/humidite' },
     { name: 'Enduit de cuvelage', path: '/enduit-cuvelage' },
     { name: 'Réparation des fissures et sablage', path: '/reparation-fissures-sablage' },
     { name: 'Résine Époxy', path: '/resine-epoxy' },
-    { name: 'Désinfection (sol, surfaces, machines)', path: '/nettoyage-desinfection' },
     { name: 'Stérilisation par voie aérienne', path: '/sterilisation-aerienne' },
     { name: 'Réparation des sols', path: '/reparation-sols' },
     { name: 'Dallage industriel', path: '/revetement-dallage-industriel' },
-    { name: 'Béton imprimé', path: '/beton-imprime' },
   ];
 
   const scrollToTop = () => {
