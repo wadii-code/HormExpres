@@ -111,7 +111,7 @@ const Projects = () => {
       location: 'Tanger',
       year: '2023',
       image: getImagePath('etancheite.jpg', 11),
-      gallery: ['./images/etancheite.jpeg'],
+      gallery: ['./images/etancheite.jpeg','./images/etancheite4.png', './images/ETANCHEITE.png' ],
       description: 'Mise en place d\'un système d\'étanchéité multicouche sur 1000 m².',
     },
     {
@@ -121,7 +121,7 @@ const Projects = () => {
       location: 'Rabat',
       year: '2022',
       image: getImagePath('sablage.png', 14),
-      gallery: ['./images/sablage1.png', './images/sablage2.png', './images/sablage-avec--sable.jpeg', './images/sablage-avec-eau.jpeg'],
+      gallery: ['./images/sablage1.png','./images/SABLLAGE1.png', './images/sablage2.png', './images/sablage-avec--sable.jpeg', './images/sablage-avec-eau.jpeg'],
       description: 'Sablage et nettoyage d\'une façade en pierre de taille.',
     },
   ];

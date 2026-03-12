@@ -132,6 +132,18 @@ const Services = () => {
         { src: './images/sablage-avec-eau.jpeg', description: ' Sablage avec eau ' },
       ],
     },
+    {
+      icon: Sparkles,
+      title: 'carriere chevaux',
+      description: 'Traitement et préparation du sol en béton dans un hangar industriel dans le cadre des travaux de génie civil à la carrière Chevaux.',
+      image: './images/cheval1.jpeg',
+      gallery: [
+        { src: './images/cheval1.jpeg', description: '  ' },
+        { src: './images/cheval2.jpeg', description: '  ' },
+        { src: './images/cheval3.jpeg', description: '  ' },
+        { src: './images/civil9-crucial.jpeg', description: ' ' },
+      ],
+    },
   ];
 
   return (
