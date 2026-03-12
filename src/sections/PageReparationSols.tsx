@@ -1,9 +1,9 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const reparationSolsImages = [
-  { src: './images/earthquike.png', alt: 'Réparation de sols 1' },
-  { src: './images/Construction-Bâtiment2.jpg', alt: 'Réparation de sols 2' },
-  { src: './images/reparation-du-sol1.png', alt: 'Réparation de sols 4' },
+  { src: './images/sol-reparation.jpeg', alt: 'Réparation de sols 1' },
+  { src: './images/reparation-de-sol.png', alt: 'Réparation de sols 2' },
+  { src: './images/reparation-du-sol1.png', alt: 'Réparation de sols 3' },
 ];
 
 const PageReparationSols = () => {

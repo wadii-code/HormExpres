@@ -2,15 +2,23 @@ import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const dallageImages = [
   { src: './images/Dallage3.jpg', alt: 'Dallage industriel 3' },
-    { src: './images/Dallage5.jpg', alt: 'Dallage industriel 5' },
-  { src: './images/Dallage4.jpg', alt: 'Dallage industriel 6' },
+        { src: './images/Dallage5.jpg', description: ' Dallage ' },
+        { src: './images/dal.jpeg', description: ' Dallage ' },
+        { src: './images/dal1.jpeg', description: ' Dallage ' },
+        { src: './images/dal2.jpeg', description: ' Dallage ' },
+        { src: './images/dal3.jpeg', description: ' Dallage ' },
+        { src: './images/dallage.jpg', description: ' Dallage ' },
+        { src: './images/dal6.png', description: ' Dallage ' },
+        { src: './images/dal7.jpeg', description: ' Dallage ' },
+        { src: './images/dal8.jpeg', description: ' Dallage ' },
+        { src: './images/sol-reparation.jpeg', description: ' Réparation de sol ' },
 ];
 
 const PageRevetementDallageIndustriel = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/dallage.jpg"
+      mediaSrc="./images/dal4.png"
       bgColor="#000"
       title="Dallage Industriel"
       subtitle="Sols robustes pour les environnements exigeants"

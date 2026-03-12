@@ -6,13 +6,16 @@ const epoxyImages = [
   { src: './images/epoxy6.png', alt: 'Résine époxy 3' },
   { src: './images/epoxy1.jpeg', alt: 'Résine époxy 4' },
   { src: './images/epoxy5.png', alt: 'Résine époxy 5' },
+  { src: './images/epoxy6.jpeg', alt: 'Résine époxy 7' },
+  { src: './images/epoxyyy.jpeg', alt: 'Résine époxy 6' },
+
 ];
 
 const PageResineEpoxy = () => {
   return (
     <ScrollExpandPage
-      mediaType="image"
-      mediaSrc="./images/epoxy3.png"
+      mediaType="video"
+      mediaSrc="/videos/epo.mp4"
       bgColor="#000"
       title="Résine Époxy"
       subtitle="Revêtements industriels de qualité supérieure"

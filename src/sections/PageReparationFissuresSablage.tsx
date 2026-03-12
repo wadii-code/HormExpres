@@ -3,6 +3,8 @@ import ScrollExpandPage from '../components/ScrollExpandPage';
 const reparationImages = [
   { src: './images/sablage2.png', alt: 'Réparation fissures 1' },
   { src: './images/sablage1.png', alt: 'Sablage 1' },
+  { src: './images/sablage-avec--sable.jpeg', description: ' Sablage avec sable ' },
+  { src: './images/sablage-avec-eau.jpeg', description: ' Sablage avec eau ' },
 
 ];
 

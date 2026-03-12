@@ -21,11 +21,11 @@ import PageReparationFissuresSablage from './sections/PageReparationFissuresSabl
 import PageResineEpoxy from './sections/PageResineEpoxy';
 import PageSterilisationAerienne from './sections/PageSterilisationAerienne';
 import ScrollToTop from './components/ScrollTop';
-import './App.css';
 import PageRevetementDallageIndustriel from './sections/PageRevetementDallageIndustriel';
 import './App.css';
 import PageReparationSols from './sections/PageReparationSols';
 import PageConstructionBatiment from './sections/PageConstructionBatiment';
+import PageCarriereChevaux from './sections/PageCarriereChevaux';
 
 
 function App() {
@@ -70,6 +70,7 @@ function App() {
         <Route path="/sterilisation-aerienne" element={<PageSterilisationAerienne />} />
         <Route path="/reparation-sols" element={<PageReparationSols />} />
         <Route path="/revetement-dallage-industriel" element={<PageRevetementDallageIndustriel />} />
+        <Route path="/genie-civil-carriere-chevaux" element={<PageCarriereChevaux />} />
       </Routes>
       <Footer />
     </div>

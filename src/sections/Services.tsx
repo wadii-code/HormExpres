@@ -44,7 +44,10 @@ const Services = () => {
         { src: './images/civil2.jpg', description: '  civil ' },
         { src: './images/civil3.jpg', description: '  civil ' },
         { src: './images/civil4.jpg', description: '  civil ' },
-        { src: './images/civil5.jpg', description: '  civil ' },
+        { src: './images/construction-batiment.jpeg', description: 'Construction Bâtiment' },
+        { src: './images/construction-batiment1.jpeg', description: 'Construction Bâtiment' },
+        { src: './images/demolition.jpeg', description: 'Démolition' },
+        { src: './images/demolition1.jpeg', description: 'Démolition' },
       ],
     },
     {
@@ -56,7 +59,10 @@ const Services = () => {
         { src: './images/charpente6.jpg', description: ' Charpente ' },
         { src: './images/Charpente2.jpeg', description: ' Charpente ' },
         { src: './images/Charpente3.jpg', description: ' Charpente ' },
-        { src: './images/Charpente4.jpg', description: ' Charpente ' },
+        { src: './images/construction-et-charpente.jpeg', description: 'Construction et Charpente' },
+        { src: './images/construction-et-charpente1.jpeg', description: 'Construction et Charpente' },
+        { src: './images/charpente-et-construction.jpeg', description: 'Charpente et Construction' },
+        { src: './images/construction-and-charpente.jpeg', description: 'Construction and Charpente' },
       ],
     },
     {
@@ -67,6 +73,10 @@ const Services = () => {
       gallery: [
         { src: './images/epoxy.jpeg', description: ' epoxy ' },
         { src: './images/epoxy1.jpeg', description: ' epoxy ' },
+        { src: './images/epoxyyy.jpeg', description: ' epoxy ' },
+        { src: './images/epoxy3.png', description: ' epoxy ' },
+        { src: './images/epoxy5.png', description: ' epoxy ' },
+        { src: './images/epoxy6.png', description: ' epoxy ' },
       ],
     },
     {
@@ -88,6 +98,7 @@ const Services = () => {
       gallery: [
         { src: './images/etancheite4.png', description: ' Étanchéité ' },
         { src: './images/etancheite3.png', description: ' Étanchéité ' },
+        { src: './images/etancheite.jpeg', description: ' Étanchéité ' },
       ],
     },
     {
@@ -97,8 +108,16 @@ const Services = () => {
       image: './images/Dallage1.jpeg',
       gallery: [
         { src: './images/Dallage3.jpg', description: ' Dallage ' },
-        { src: './images/Dallage4.jpg', description: ' Dallage ' },
         { src: './images/Dallage5.jpg', description: ' Dallage ' },
+        { src: './images/dal.jpeg', description: ' Dallage ' },
+        { src: './images/dal1.jpeg', description: ' Dallage ' },
+        { src: './images/dal2.jpeg', description: ' Dallage ' },
+        { src: './images/dal3.jpeg', description: ' Dallage ' },
+        { src: './images/dal4.png', description: ' Dallage ' },
+        { src: './images/dal6.png', description: ' Dallage ' },
+        { src: './images/dal7.jpeg', description: ' Dallage ' },
+        { src: './images/dal8.jpeg', description: ' Dallage ' },
+        { src: './images/sol-reparation.jpeg', description: ' Réparation de sol ' },
       ],
     },
     {
@@ -109,6 +128,8 @@ const Services = () => {
       gallery: [
         { src: './images/sablage2.png', description: ' Sablage ' },
         { src: './images/sablage1.png', description: ' Sablage ' },
+        { src: './images/sablage-avec--sable.jpeg', description: ' Sablage avec sable ' },
+        { src: './images/sablage-avec-eau.jpeg', description: ' Sablage avec eau ' },
       ],
     },
   ];

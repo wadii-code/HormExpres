@@ -1,14 +1,16 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const constructionImages = [
-  { src: './images/Construction-Bâtiment.jpeg', alt: 'Construction bâtiment 2' },
-  { src: './images/civil1.jpeg', alt: 'Construction bâtiment 4' },
-  { src: './images/civil1.jpg', alt: 'Construction bâtiment 5' },
-  { src: './images/civil2.jpg', alt: 'Construction bâtiment 6' },
-  { src: './images/cheval1.jpeg', alt: 'Construction bâtiment 7' },
-  { src: './images/cheval3.jpeg', alt: 'Construction bâtiment 8' },
-  { src: './images/civil9-crucial.jpeg', alt: 'Construction bâtiment 8' },
-];
+    { src: './images/Construction-Bâtiment.jpeg', alt: 'Construction bâtiment 2' },
+    { src: './images/civil1.jpeg', alt: 'Construction bâtiment 4' },
+    { src: './images/civil1.jpg', alt: 'Construction bâtiment 5' },
+    { src: './images/civil2.jpg', alt: 'Construction bâtiment 6' },
+    { src: './images/cheval1.jpeg', alt: 'Construction bâtiment 7' },
+    { src: './images/cheval3.jpeg', alt: 'Construction bâtiment 8' },
+    { src: './images/civil9-crucial.jpeg', alt: 'Construction bâtiment 8' },
+          { src: './images/construction-et-charpente1.jpeg', description: 'Construction et Charpente' },
+          { src: './images/charpente-et-construction.jpeg', description: 'Charpente et Construction' },
+  ];
 
 const PageConstructionBatiment = () => {
   return (

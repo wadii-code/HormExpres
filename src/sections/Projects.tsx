@@ -36,6 +36,7 @@ const Projects = () => {
     { id: 'peinture', label: 'Peinture mural' },
     { id: 'etancheite', label: 'Étanchéité' },
     { id: 'sablage', label: 'Sablage' },
+    { id: 'carriere chevaux', label: 'carriere chevaux' },
   ];
 
   const getImagePath = (baseName: string, id: number) => {
@@ -49,8 +50,8 @@ const Projects = () => {
       category: 'construction',
       location: 'Casablanca',
       year: '2023',
-      image: getImagePath('civil.jpg', 1),
-      gallery: ['./images/civil1.jpg', './images/civil2.jpg', './images/civil3.jpg'],
+      image: getImagePath('construction-batiment.jpeg', 1),
+      gallery: ['./images/civil1.jpg', './images/civil2.jpg', './images/civil3.jpg', './images/civil.jpg', './images/construction-batiment1.jpeg', './images/demolition.jpeg', './images/demolition1.jpeg'],
       description: 'Construction d\'un bâtiment résidentiel de 5 étages.',
     },
     {
@@ -60,7 +61,7 @@ const Projects = () => {
       location: 'Tanger',
       year: '2023',
       image: getImagePath('Charpente2.jpeg', 3),
-      gallery: ['./images/Charpente1.jpeg', './images/Charpente2.jpeg', './images/Charpente3.jpg'],
+      gallery: ['./images/Charpente1.jpeg', './images/Charpente2.jpeg', './images/Charpente3.jpg', './images/construction-et-charpente.jpeg', './images/construction-et-charpente1.jpeg', './images/charpente-et-construction.jpeg', './images/construction-and-charpente.jpeg'],
       description: 'Conception et montage d\'une charpente métallique pour un hangar de 5000 m².',
     },
     {
@@ -70,8 +71,18 @@ const Projects = () => {
       location: 'Agadir',
       year: '2023',
       image: getImagePath('epoxy.jpeg', 5),
-      gallery: ['./images/epoxy1.jpeg', './images/epoxy2.jpg'],
+      gallery: ['./images/epoxy1.jpeg', './images/epoxy2.jpg', './images/epoxyyy.jpeg', './images/epoxy3.png', './images/epoxy5.png', './images/epoxy6.png'],
       description: 'Application de résine époxy alimentaire sur 2000 m².',
+    },
+    {
+      id: 13,
+      title: 'carriere chevaux',
+      category: 'carriere chevaux',
+      location: 'Rabat',
+      year: '2022',
+      image: getImagePath('cheval1.jpeg', 13),
+      gallery: ['./images/cheval1.jpeg', './images/cheval2.jpeg', './images/cheval3.jpeg', './images/civil9-crucial.jpeg'],
+      description: 'Traitement et préparation du sol en béton dans un hangar industriel dans le cadre des travaux de génie civil à la carrière Chevaux.',
     },
     {
       id: 7,
@@ -79,8 +90,8 @@ const Projects = () => {
       category: 'revetement',
       location: 'Casablanca',
       year: '2023',
-      image: getImagePath('Dallage3.jpg', 7),
-      gallery: [ './images/Dallage1.jpeg', './images/Dallage4.jpg', './images/Dallage5.jpg'],
+      image: getImagePath('dal4.png', 7),
+      gallery: [ './images/Dallage1.jpeg', './images/Dallage4.jpg', './images/Dallage5.jpg', './images/dal.jpeg', './images/dal1.jpeg', './images/dal2.jpeg', './images/dal3.jpeg', './images/Dallage3.jpg', './images/dal5.png', './images/dal6.png', './images/dal7.jpeg', './images/dal8.jpeg', './images/sol-reparation.jpeg'],
       description: 'Réalisation d\'un dallage industriel de 10 000 m².',
     },
     {
@@ -110,7 +121,7 @@ const Projects = () => {
       location: 'Rabat',
       year: '2022',
       image: getImagePath('sablage.png', 14),
-      gallery: ['./images/sablage1.png', './images/sablage2.png'],
+      gallery: ['./images/sablage1.png', './images/sablage2.png', './images/sablage-avec--sable.jpeg', './images/sablage-avec-eau.jpeg'],
       description: 'Sablage et nettoyage d\'une façade en pierre de taille.',
     },
   ];
