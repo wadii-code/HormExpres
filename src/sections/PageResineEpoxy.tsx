@@ -8,6 +8,14 @@ const epoxyImages = [
   { src: './images/epoxy5.png', alt: 'Résine époxy 5' },
   { src: './images/epoxy6.jpeg', alt: 'Résine époxy 7' },
   { src: './images/epoxyyy.jpeg', alt: 'Résine époxy 6' },
+  { src: './images/sablage2.png', alt: 'Réparation fissures 1' },
+  { src: './images/sablage1.png', alt: 'Sablage 1' },
+  { src: './images/sablage-avec--sable.jpeg', description: ' Sablage avec sable ' },
+  { src: './images/sablage-avec-eau.jpeg', description: ' Sablage avec eau ' },
+  { src: './images/sol-reparation.jpeg', alt: 'Réparation de sols 1' },
+  { src: './images/reparation-de-sol.png', alt: 'Réparation de sols 2' },
+  { src: './images/reparation-du-sol1.png', alt: 'Réparation de sols 3' },
+  
 
 ];
 

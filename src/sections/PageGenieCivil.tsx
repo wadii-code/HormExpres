@@ -19,7 +19,7 @@ const PageGenieCivil = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/civil.jpg"
+      mediaSrc="./images/Charpente4.jpg"
       bgColor="#000"
       title="Génie Civil"
       subtitle="Construction et infrastructures de qualité"

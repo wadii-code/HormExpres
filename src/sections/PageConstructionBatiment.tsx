@@ -1,22 +1,43 @@
 import ScrollExpandPage from '../components/ScrollExpandPage';
 
 const constructionImages = [
-    { src: './images/Construction-Bâtiment.jpeg', alt: 'Construction bâtiment 2' },
+    { src: './images/Charpente4.jpg', alt: 'Construction bâtiment 2' },
     { src: './images/civil1.jpeg', alt: 'Construction bâtiment 4' },
     { src: './images/civil1.jpg', alt: 'Construction bâtiment 5' },
     { src: './images/civil2.jpg', alt: 'Construction bâtiment 6' },
     { src: './images/cheval1.jpeg', alt: 'Construction bâtiment 7' },
     { src: './images/cheval3.jpeg', alt: 'Construction bâtiment 8' },
     { src: './images/civil9-crucial.jpeg', alt: 'Construction bâtiment 8' },
-          { src: './images/construction-et-charpente1.jpeg', description: 'Construction et Charpente' },
-          { src: './images/charpente-et-construction.jpeg', description: 'Charpente et Construction' },
+    { src: './images/construction-et-charpente1.jpeg', description: 'Construction et Charpente' },
+    { src: './images/charpente-et-construction.jpeg', description: 'Charpente et Construction' },
+    { src: './images/assainissement1.jpg', alt: 'Assainissement 1' },
+    { src: './images/assainissement2.jpg', alt: 'Assainissement 1' },
+    { src: './images/assainissement3.jpg', alt: 'Assainissement 1' },
+    { src: './images/beton-arme.jpg', alt: 'Béton armé 1' },
+    { src: './images/beton-arme2.jpg', alt: 'Béton armé 2' },
+    { src: './images/beton-arme3.jpg', alt: 'Béton armé 3' },
+    { src: './images/etancheite.jpeg', alt: 'Étanchéité 1' },
+    { src: './images/etancheite.jpg', alt: 'Étanchéité 2' },
+    { src: './images/cavelage.jpg', alt: 'Étanchéité 3' },
+    { src: './images/cavelage0.jpg', alt: 'Étanchéité 4' },
+    { src: './images/Dallage3.jpg', alt: 'Dallage industriel 3' },
+        { src: './images/Dallage5.jpg', description: ' Dallage ' },
+        { src: './images/dal.jpeg', description: ' Dallage ' },
+        { src: './images/dal1.jpeg', description: ' Dallage ' },
+        { src: './images/dal2.jpeg', description: ' Dallage ' },
+        { src: './images/dal3.jpeg', description: ' Dallage ' },
+        { src: './images/dallage.jpg', description: ' Dallage ' },
+        { src: './images/dal6.png', description: ' Dallage ' },
+        { src: './images/dal7.jpeg', description: ' Dallage ' },
+        { src: './images/dal8.jpeg', description: ' Dallage ' },
+        { src: './images/sol-reparation.jpeg', description: ' Réparation de sol ' },
   ];
 
 const PageConstructionBatiment = () => {
   return (
     <ScrollExpandPage
       mediaType="image"
-      mediaSrc="./images/Construction-Bâtiment2.jpg"
+      mediaSrc="./images/dal.jpeg"
       bgColor="#000"
       title="Construction Bâtiment"
       subtitle="Expertise en construction de bâtiments"

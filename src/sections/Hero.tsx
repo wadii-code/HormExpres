@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
+      id="Accueil"
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
@@ -191,7 +191,7 @@ const Hero = () => {
       {/* Side Navigation Dots */}
       <div className="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 z-30">
         <div className="flex flex-col gap-4">
-          {['home', 'about', 'services', 'projects', 'contact'].map((section) => (
+          {['Accueil', 'À Propos', 'Services', 'Projets', 'Contact'].map((section) => (
             <a
               key={section}
               href={`#${section}`}
